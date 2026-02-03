@@ -7,8 +7,7 @@ from datetime import datetime
 
 def get_steam_path():
     """
-    Пытается найти путь установки Steam
-    
+    Поиск пути установки Steam
     """
     #  убрать ниже если указываются вручную
     # steam_path_manual = r"C:\Program Files (x86)\Steam" 
@@ -94,7 +93,7 @@ def main():
         return
 
     print(f"Путь к steam: {steam_path}")
-    print("Мониторинг загрузок 5 измерений\n")
+    print("Мониторинг 5 загрузок по 60 с\n")
 
     for i in range(1, 6):
         game, speed, status = parse_download_log(steam_path)
@@ -110,4 +109,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
